@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- SPLASH -->
+        <LinearLayout
+            android:id="@+id/screenSplash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible"
+            android:paddingTop="48dp"
+            android:paddingBottom="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎬 Movie Reviewer"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:paddingBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add movies, rate them, and view reviews."
+                android:textSize="14sp"
+                android:paddingBottom="16dp"/>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- MAIN MENU -->
+        <LinearLayout
+            android:id="@+id/screenMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnMenuAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Movie"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btnMenuView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Reviews" />
+        </LinearLayout>
+
+        <!-- ADD MOVIE -->
+        <LinearLayout
+            android:id="@+id/screenAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Movie title (e.g., Interstellar)"
+                android:inputType="textCapWords"
+                android:maxLength="60"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/etGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Genre (e.g., Drama)"
+                android:inputType="textCapWords"
+                android:maxLength="30"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/etRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rating (1–5)"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/etReview"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top|start"
+                android:hint="Write a short review"
+                android:inputType="textMultiLine"
+                android:maxLength="240" />
+
+            <Button
+                android:id="@+id/btnAddMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Review"
+                android:layout_marginTop="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnViewReviewsFromAdd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="View Reviews" />
+
+                <Button
+                    android:id="@+id/btnBackFromAdd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Back" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- REVIEWS LIST -->
+        <LinearLayout
+            android:id="@+id/screenList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvAverage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Average rating: 0.0 (0 movies)"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"/>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="320dp" />
+
+            <Button
+                android:id="@+id/btnClearAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear All Reviews"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnBackFromList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
